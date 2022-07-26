@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import './ShoppingList.css';
 class ShoppingList extends Component {
   constructor(props) {
-    
+    super(props)
 
     this.state = {
       newItemName: '',
       groceryItems: [
         { name: 'Bananas', id: 'item-1', completed: false },
-        { name: 'Apples', id: 'item-2', completed: true },
+        { name: 'Apples', id: 'item-2', completed: false },
         { name: 'Rice', id: 'item-3', completed: false }
       ],
       validationErrors: {},
@@ -120,8 +120,8 @@ class ShoppingList extends Component {
     return (
       <>
       <section>
-        <h3>Shopping List</h3>
-        { !groceryItems.length && <p>No items!</p> }
+        <h3>my shoping app</h3>
+        { !groceryItems.length && <p>No items! in this database</p> }
         <ul>
           {
             groceryItems.map((item, index) => {
@@ -161,7 +161,7 @@ class ShoppingList extends Component {
 
           <button type="submit">Submit</button>
 
-          <p>Submitted {this.state.submitted} times!</p>
+          <p>Submitted {this.state.submitted} items</p>
         </form>
       </section>
       </>
